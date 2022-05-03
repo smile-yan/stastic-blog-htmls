@@ -1,166 +1,325 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Bootstrap5 实例</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
-  <style>
-.cal-month,
-.cal-days,
-.cal-weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  align-items: center;
-}
-.cal-month-name {
-  grid-column-start: 2;
-  grid-column-end: 7;
-  text-align: center;
-}
-.cal-weekday,
-.cal-btn {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
-  padding: 0;
-}
+    <title>Bootstrap5 实例</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .cal-month,
+        .cal-days,
+        .cal-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            align-items: center;
+        }
 
-.cal-btn:not([disabled]) {
-  font-weight: 500;
-}
+        .cal-month-name {
+            grid-column-start: 2;
+            grid-column-end: 7;
+            text-align: center;
+        }
 
-.cal-btn:hover,
-.cal-btn:focus {
-  background-color: rgba(0, 0, 0, .05);
-}
-.cal-btn[disabled] {
-  opacity: .5;
-}
+        .cal-weekday,
+        .cal-btn {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            height: 3rem;
+            padding: 0;
+        }
+
+        .cal-btn:not([disabled]) {
+            font-weight: 500;
+        }
+
+        .cal-btn:hover,
+        .cal-btn:focus {
+            background-color: rgba(0, 0, 0, .05);
+        }
+
+        .cal-btn[disabled] {
+            opacity: .5;
+        }
+        
 
 
-  </style>
+        .top_dot{
+            display: block;
+            color: red;
+            font-size: large;
+            left: 7px;
+            top: -14px;
+            /*bottom: -12px;*/
+            position: relative;
+            width: 5px;
+            height: 5px;
+            background:#00f;
+            border-radius:50%;
+        }
+
+        .left_dot{
+            display: block;
+            color: red;
+            font-size: large;
+            left: 0px;
+            /*top: -14px;*/
+            /*bottom: -12px;*/
+            position: relative;
+            width: 5px;
+            height: 5px;
+            background:#00f;
+            border-radius:50%;
+        }
+        .right_dot{
+            display: block;
+            color: red;
+            font-size: large;
+            right: 0px;
+            /*top: -14px;*/
+            /*bottom: -12px;*/
+            position: relative;
+            width: 5px;
+            height: 5px;
+            background:#00f;
+            border-radius:50%;
+        }
+
+        .bottom_dot{
+            display: block;
+            color: red;
+            font-size: large;
+            left: -7px;
+            bottom: -14px;
+            position: relative;
+            width: 5px;
+            height: 5px;
+            background:#00ff33;
+            border-radius:50%;
+        }
+
+        .bottom_right_dot {
+            display: block;
+            color: red;
+            font-size: large;
+            left: -3px;
+            bottom: -14px;
+            position: relative;
+            width: 5px;
+            height: 5px;
+            background:#00008B;
+            border-radius:50%;
+        }
+
+        .bottom_left_dot {
+            display: block;
+            color: red;
+            font-size: large;
+            left: -2px;
+            bottom: -14px;
+            position: relative;
+            width: 5px;
+            height: 5px;
+            background:#f10101;
+            /*background: #f8f9fa;*/
+            border-radius:50%;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="row">
-    <div class="col-lg-6 mx-auto">
-        <div class="container">
-          
-            <div class="card-body bg-light">
-                <div class="d-grid gap-1">
-                    <div class="cal">
-                        <div style="text-align: center;">
-                            <a onclick="preYear()" class="muted-link float-start" href="#" style="padding-right: 5px;"> <i class="fa fa-angle-double-left"></i></a>
-    
-                            <a onclick="preMonth()" class="muted-link float-start" href="#"> <i class="fa fa-angle-left"></i></a>
-    
-                            <strong><text id="curr_year">
-                                    2022
-                                </text>.
-                                <select id="curr_month" name="sellist1" onchange="selectChange(this)">
-                                    
-                                        
-                                                <option class="month_selection">
-                                                    1
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    2
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    3
-                                                </option>
-                                                
-                                                    
-                                        
-                                            <option class="month_selection" selected="">
-                                                4
-                                            </option>
-                                            
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    5
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    6
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    7
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    8
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    9
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    10
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    11
-                                                </option>
-                                                
-                                                    
-                                        
-                                                <option class="month_selection">
-                                                    12
-                                                </option>
-                                                
-                                                    
-                                </select>
-                            </strong>
-    
-                            <a onclick="nextYear()" class="muted-link float-end" href="#"> <i class="fa fa-angle-double-right"></i></a>
-                            <a onclick="nextMonth()" id="next-year" class="muted-link float-end" href="#" style="padding-right: 5px;"> <i class="fa fa-angle-right"></i></a>
-    
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="container">
+
+                <div class="card-body bg-light">
+                    <div class="d-grid gap-1">
+                        <div class="cal">
+                            <div style="text-align: center;">
+                                <a onclick="preYear()" class="muted-link float-start" href="#"
+                                    style="padding-right: 5px;"> <i class="fa fa-angle-double-left"></i></a>
+
+                                <a onclick="preMonth()" class="muted-link float-start" href="#"> <i
+                                        class="fa fa-angle-left"></i></a>
+
+                                <strong><text id="curr_year">
+                                        2022
+                                    </text>.
+                                    <select id="curr_month" name="sellist1" onchange="selectChange(this)">
+                                        <option class="month_selection">
+                                            1
+                                        </option>
+                                        <option class="month_selection">
+                                            2
+                                        </option>
+                                        <option class="month_selection">
+                                            3
+                                        </option>
+                                        <option class="month_selection" selected="">
+                                            4
+                                        </option>
+                                        <option class="month_selection">
+                                            5
+                                        </option>
+                                        <option class="month_selection">
+                                            6
+                                        </option>
+                                        <option class="month_selection">
+                                            7
+                                        </option>
+                                        <option class="month_selection">
+                                            8
+                                        </option>
+                                        <option class="month_selection">
+                                            9
+                                        </option>
+                                        <option class="month_selection">
+                                            10
+                                        </option>
+                                        <option class="month_selection">
+                                            11
+                                        </option>
+                                        <option class="month_selection">
+                                            12
+                                        </option>
+                                    </select>
+                                </strong>
+
+                                <a onclick="nextYear()" class="muted-link float-end" href="#"> <i
+                                        class="fa fa-angle-double-right"></i></a>
+                                <a onclick="nextMonth()" id="next-year" class="muted-link float-end" href="#"
+                                    style="padding-right: 5px;"> <i class="fa fa-angle-right"></i></a>
+
+                            </div>
+                            <div class="cal-weekdays text-body">
+                                <div class="cal-weekday">日</div>
+                                <div class="cal-weekday">一</div>
+                                <div class="cal-weekday">二</div>
+                                <div class="cal-weekday">三</div>
+                                <div class="cal-weekday">四</div>
+                                <div class="cal-weekday">五</div>
+                                <div class="cal-weekday">六</div>
+                            </div>
+                            <div class="cal-days" id="calendar_detail"> <button class="btn cal-btn disabled"
+                                    type="button"></button> <button class="btn cal-btn disabled" type="button"></button>
+                                <button class="btn cal-btn disabled" type="button">
+                                </button>
+                                <button class="btn cal-btn disabled" type="button">
+                                </button>
+                                <button class="btn cal-btn disabled" type="button">
+                                </button>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_1" href="#">
+                                    1
+                                </a>
+                                <a class="btn text-muted cal-btn"  id="2022_4_2" href="#">
+<!--                                    <span class="left_dot"></span>-->
+<!--                                    <span class="top_dot"></span>-->
+                                    <span class="bottom_left_dot"></span>
+                                    <span>2</span>
+                                    <span class="bottom_dot"></span>
+                                    <span class="bottom_right_dot"></span>
+<!--                                    <span class="right_dot"></span>-->
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_3" href="#">
+                                    3
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_4" href="#">
+                                    4
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_5" href="#">
+                                    5
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_6" href="#">
+                                    6
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_7" href="#">
+                                    7
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_8" href="#">
+                                    8
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_9" href="#">
+                                    9
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_10" href="#">
+                                    10
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_11" href="#">
+                                    11
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_12" href="#">
+                                    12
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_13" href="#">
+                                    13
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_14" href="#">
+                                    14
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_15" href="#">
+                                    15
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_16" href="#">
+                                    16
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_17" href="#">
+                                    17
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_18" href="#">
+                                    18
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_19" href="#">
+                                    19
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_20" href="#">
+                                    20
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_21" href="#">
+                                    21
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_22" href="#">
+                                    22
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_23" href="#">
+                                    23
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_24" href="#">
+                                    24
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_25" href="#">
+                                    25
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_26" href="#">
+                                    26
+                                </a>
+                                <a class="btn cal-btn text-body" type="button" id="2022_4_27"
+                                    href="/archives/2022/04/27" style="font-size: 22px;">
+                                    27
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_28" href="#">
+                                    28
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_29" href="#">
+                                    29
+                                </a>
+                                <a class="btn cal-btn text-secondary" type="button" id="2022_4_30" href="#">
+                                    30
+                                </a>
+                            </div>
                         </div>
-                        <div class="cal-weekdays text-body">
-                            <div class="cal-weekday">日</div>
-                            <div class="cal-weekday">一</div>
-                            <div class="cal-weekday">二</div>
-                            <div class="cal-weekday">三</div>
-                            <div class="cal-weekday">四</div>
-                            <div class="cal-weekday">五</div>
-                            <div class="cal-weekday">六</div>
-                        </div>
-                        <div class="cal-days" id="calendar_detail"> <button class="btn cal-btn disabled" type="button"></button> <button class="btn cal-btn disabled" type="button"></button> <button class="btn cal-btn disabled" type="button"></button> <button class="btn cal-btn disabled" type="button"></button> <button class="btn cal-btn disabled" type="button"></button> <a class="btn cal-btn text-secondary" type="button" id="2022_4_1" href="#">1</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_2" href="#">2</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_3" href="#">3</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_4" href="#">4</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_5" href="#">5</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_6" href="#">6</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_7" href="#">7</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_8" href="#">8</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_9" href="#">9</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_10" href="#">10</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_11" href="#">11</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_12" href="#">12</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_13" href="#">13</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_14" href="#">14</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_15" href="#">15</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_16" href="#">16</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_17" href="#">17</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_18" href="#">18</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_19" href="#">19</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_20" href="#">20</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_21" href="#">21</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_22" href="#">22</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_23" href="#">23</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_24" href="#">24</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_25" href="#">25</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_26" href="#">26</a> <a class="btn cal-btn text-body" type="button" id="2022_4_27" href="/archives/2022/04/27" style="font-size: 22px;">27</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_28" href="#">28</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_29" href="#">29</a> <a class="btn cal-btn text-secondary" type="button" id="2022_4_30" href="#">30</a></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 
 
 </body>
+
 </html>
