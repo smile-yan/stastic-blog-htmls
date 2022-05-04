@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f72d30f4-acf5-4c20-ad79-4f34ad543f5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap5-2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap5-2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap5-cover/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap5-cover/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,10 +35,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/git-project/stastic-blog-htmls/bootstrap5-cover",
+    "last_opened_file_path": "D:/git-project/stastic-blog-htmls/paper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,6 +50,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git-project\stastic-blog-htmls\paper" />
       <recent name="D:\git-project\stastic-blog-htmls\bootstrap5-cover" />
       <recent name="D:\git-project\stastic-blog-htmls" />
     </key>
@@ -58,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651371547851</updated>
       <workItem from="1651371551719" duration="4487000" />
-      <workItem from="1651378600814" duration="6625000" />
+      <workItem from="1651378600814" duration="21411000" />
     </task>
     <servers />
   </component>
